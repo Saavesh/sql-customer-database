@@ -3,3 +3,21 @@
 .DS_Store
 *.cache
 .vscode/
+Desktop.ini
+
+# Jupyter Notebook checkpoints
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.venv/
+
+# MySQL / DB dumps & client configs
+*.sql.gz
+*.dump
+*.bak
+*.backup
+*.log
+mysql.cnf
+.my.cnf
