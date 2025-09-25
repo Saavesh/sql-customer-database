@@ -1,0 +1,5 @@
+# Ignore these files and directories
+.git
+.DS_Store
+*.cache
+.vscode/
