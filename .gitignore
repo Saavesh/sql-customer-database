@@ -1,19 +1,19 @@
-# Ignore these files and directories
-.git
+## Os and Editors
 .DS_Store
-*.cache
 .vscode/
 Desktop.ini
 
-# Jupyter Notebook checkpoints
+# Jupyter and Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
 .ipynb_checkpoints/
-.venv/
+.cache/
 
-# MySQL / DB dumps & client configs
+# Virtual environment and secrets
+.venv/
+.env*
+
+# MySQL / DB dumps & configs
 *.sql.gz
 *.dump
 *.bak
@@ -21,3 +21,7 @@ __pycache__/
 *.log
 mysql.cnf
 .my.cnf
+
+# Docker
+docker/**/data/
+docker-compose.override.yml
