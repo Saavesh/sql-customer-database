@@ -17,11 +17,4 @@ __pycache__/
 *.sql.gz
 *.dump
 *.bak
-*.backup
 *.log
-mysql.cnf
-.my.cnf
-
-# Docker
-docker/**/data/
-docker-compose.override.yml
