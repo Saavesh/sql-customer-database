@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS plan;
 DROP TABLE IF EXISTS customer;
 
 
--- CUSTOMER TABLE -- Customers table created before others due to foreign key dependencies
+-- CUSTOMER TABLE (table created before others due to foreign key dependencies)
 CREATE TABLE customer (
     customer_id    INT          NOT NULL   AUTO_INCREMENT,
     full_name      VARCHAR(100) NOT NULL,
@@ -28,14 +28,15 @@ CREATE TABLE plan (
     plan_type           VARCHAR(50)    NOT NULL,
     plan_name           VARCHAR(100)   NOT NULL,
     plan_duration_days  INT            NOT NULL,
-    plan_cost           DECIMAL(10,2)  NOT NULL,
+    plan_cost           DECIMAL(10,2)  NOT NULL  CHECK (plan_cost >= 0),
     plan_features       VARCHAR(255)   NULL,
 
-    PRIMARY KEY (plan_id)
+    PRIMARY KEY (plan_id),
+    UNIQUE KEY uk_plan_name (plan_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- TRANSACTIONS TABLE
+-- `TRANSACTIONS` TABLE
 CREATE TABLE `transaction` (
     transaction_id      INT            NOT NULL  AUTO_INCREMENT,
     transaction_type    VARCHAR(50)    NOT NULL,
@@ -89,8 +90,3 @@ CREATE TABLE cancellation (
     PRIMARY KEY (cancellation_id),
     CONSTRAINT fk_cancel_customer_id FOREIGN KEY (customer_id) REFERENCES customer (customer_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-
-
-
